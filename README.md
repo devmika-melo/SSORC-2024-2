@@ -144,6 +144,9 @@ sudo tail -f /var/log/squid/access.log
 
 _Exibe as últimas linhas do arquivo de log de acessos do Squid_
 
+Você pode dividir a tela do navegador Firefox com o terminal, sem fechar o cache e ver em tempo real o site sendo armazenado.
+
+<img src="img/pritn log cache.jpg" width="700px;" alt="print cache"/><br>
 
 <h2 id="colab">🤝 Collaboradores</h2>
 
