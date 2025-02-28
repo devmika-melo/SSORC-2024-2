@@ -19,7 +19,7 @@ Para a realização dessa atividade, será necessário alguns pré-requisitos:
 
 <h2>  ✔️ Métodos</h2>
 Apara realização dessa atividade é essencial a instalação de alguns programas na sua máquina Debian.
-
+Abra sua máquina vitualLinux Debian como administrador e instale os programas essenciais:
 
 <h4>📍 Instalação do Proxy Squid</h4>
 
