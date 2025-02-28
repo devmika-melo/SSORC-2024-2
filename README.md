@@ -2,11 +2,11 @@
 <h2 align="center">CONFIGURAÇÕES DE CACHE NO SQUID</h2>
 
 <p align="center">
-<b>Repositório Utilizado Somenete Para a Aplicação da Atividade Do Projeto Final da Cadeira de Segurança em Sietemas Operacionais e Redes de Computadores!</b>
+<b>Repositório Utilizado Somente Para a Aplicação da Atividade Do Projeto Final da Cadeira de Segurança em Sietemas Operacionais e Redes de Computadores!</b>
 </p>
 
 <h2> 📌 Objetivo Da Atividade</h2>
-O objetivo desta atividade é que você configure o Squid para ajustar o tamanho do cache, configure a limpeza automática dos arquivos antigos e personalize outros parâmetros de cache para melhorar o desempenho e a eficiência do servidor proxy.
+O objetivo desta atividade é que você configure o Squid para ajustar o tamanho do cache, configurar a limpeza automática dos arquivos antigos e personalize outros parâmetros de cache para melhorar o desempenho e a eficiência do servidor proxy.
 
 <h2> ✔️ Materiais</h2>
 
@@ -83,7 +83,7 @@ acl Safe_ports port 443
 acl CONNECT method CONNECT
 
 # Permite que o método CONNECT seja utilizado somente para a porta SSL configurada anteriormente.
-http_access allow CONNECT SSL_port
+http_access allow CONNECT SSL_ports
 ```
 
 ## 📌 Configuração de ACLs no Squid
