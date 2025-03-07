@@ -76,6 +76,9 @@ cache_swap_low 90
 # Começa a excluir arquivos antigos automáticamente quando atingir 95% da capacidade total para liberar espaço.
 cache_swap_high 95
 
+# Permite que todas as máquinas conectadas ao ip da máquina squid armazenem no cache
+acl localnet src 192.168.1.40/24 (coloque o ip da sua máquina)
+
 # Permite conexões HTTP (porta 80) e HTTPS (porta 443), garantindo que os usuários possam navegar normalmente sem bloqueios.
 acl SSL_ports port 443
 acl Safe_ports port 80
@@ -84,7 +87,14 @@ acl CONNECT method CONNECT
 
 # Permite que o método CONNECT seja utilizado somente para a porta SSL configurada anteriormente.
 http_access allow CONNECT SSL_ports
+http_access allow Safe_ports
 ```
+
+Verifique se as linhas "http_access allow localnet, http_access allow localhost e http_access deny all" estão descomentadas, caso não estejam, descomente.
+_(Para ir direto para as linhas pressione Crtl + W e digite a linha na qual deseja achar)_
+
+Também procure a linha "http_port 3128", se estiver comentada, descomente e modifique para "http_port 0.0.0.0:3128"
+_Isso permite a conexão tanto para IPv4 quando para IPv6_
 
 ## 📌 Configuração de ACLs no Squid
 
@@ -117,6 +127,7 @@ Se aparecer **active (running)**, significa que está rodando!✅
 <h3> 🔹 Passo 3: Configurar o Navegador Para Usar o Proxy.</h3>
 Agora, precisamos configurar o navegador para utilizar o Squid.
 
+**Se deseja que sua própria máquina virtual acesse o seu proxy cache, siga os passos abaixo:**
 
 **Firefox**
 1. Abra o Firefox dá própria VM.
@@ -130,6 +141,21 @@ _Porta padrão do squid para comunicação de proxy._
 
 5. Marque a opção **"Also use this proxy for HTTPS"**
 6. Clique em **OK** e reinicie o navegador.
+
+**Agora, nos outros computadores da rede:**
+
+1. Vá para Configurações de Rede do navegador (Firefox, Edge, Chromel, Opera, Etc).
+2. Procure a opção de **Configuração de Proxy Manual.**
+3. Em HTTP Proxy, coloque o IP da máquina virtual e a porta 3128.
+
+**Exemplo:**
+
+Proxy: `192.168.1.50`
+
+Porta: `3128`
+
+Salve e teste acessando um site.
+
 
 <h3> 🔹 Passo 4: Testar o Funcionamento do Cache.</h3>
 Acesse qualquer site no navegdor da VM, por exemplo:
