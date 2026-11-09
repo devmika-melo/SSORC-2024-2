@@ -6,7 +6,7 @@
 </p>
 
 <h2> 📌 Objetivo Da Atividade</h2>
-O objetivo desta atividade é que você configure o Squid para ajustar o tamanho do cache, configurar a limpeza automática dos arquivos antigos e personalize outros parâmetros de cache para melhorar o desempenho e a eficiência do servidor proxy.
+O objetivo desta atividade é configurar o Squid para ajustar o tamanho do cache, configurar a limpeza automática dos arquivos antigos e personalize outros parâmetros de cache para melhorar o desempenho e a eficiência do servidor proxy.
 
 <h2> ✔️ Materiais</h2>
 
